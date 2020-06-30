@@ -66,6 +66,7 @@ public class UserRepositoryImpl implements UserRepository {
         entityManager.createNativeQuery("DELETE FROM todo t WHERE t.userId = " + user.getId()).executeUpdate();
         User u = entityManager.find(User.class, user.getId());
         entityManager.remove(u);
+        u = null; // dummy change 
     }
 
     /**
